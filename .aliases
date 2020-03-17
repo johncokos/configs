@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+verify() {
+  echo "GIT `git --version`"
+  echo "TREE `tree --version`"
+  echo "Live Server `live-server --version`"
+  echo "JSON Server `json-server --version`"
+  echo "NODE `node --version`"
+  echo "NPM `npm --version`"
+  echo "HEROKU `heroku --version`"
+  echo "PSQL `psql --version`"
+  echo "MONGO `mongo --version`"
+}
+
+alias start-mongo='sudo mongod --dbpath ~/data/db'
+
+acp() {
+  git add .
+  git commit -m "$2"
+  git push origin $1
+}
+
+set -o vi
